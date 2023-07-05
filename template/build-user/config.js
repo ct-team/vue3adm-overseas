@@ -1,7 +1,23 @@
 module.exports = {
   checkAppId: '',
   appVersion: '1.0.0', // 项目版本
-
+  list: [
+    {
+      title: '1505-stable',
+      mode: 'stable',
+      env: 1505,
+    },
+    {
+      title: '2505-pre',
+      mode: 'pre',
+      env: 2505,
+    },
+    {
+      title: '80-static',
+      mode: 'production',
+      env: 'production',
+    },
+  ],
   px2rem: {
     // rootValue: 100, // 换算的基数
     // selectorBlackList: ['van-'], // 忽略转换正则匹配项 ['van-']

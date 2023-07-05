@@ -14,10 +14,13 @@ const getItemToEnv = function (env) {
     return item.mode === env;
   });
 };
-module.exports.getPages = function () {
+module.exports.getPages = function (env) {
   const entryFiles = glob.sync(root + '/*/main.ts');
   const map = {};
-  var envItem = { title: 'html' };
+  var envItem = getItemToEnv(env);
+  if (!envItem) {
+    envItem = { title: 'html' };
+  }
 
   entryFiles.forEach((filePath) => {
     const filename = getMulu(filePath);
