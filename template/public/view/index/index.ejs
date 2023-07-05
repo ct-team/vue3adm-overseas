@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1, minimum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <title>demo</title>
+    <meta
+      name="ctEnv"
+      content="<%=process.env.VUE_APP_ENV || process.env.NODE_ENV%>"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="//comm.admin.tv108.cn:1505/img/favicon.ico"
+    />
+
+    <link
+      rel="stylesheet"
+      href="//comm.admin.tv108.cn:1505/element-plus/2.3.3/skin.css?t=<%=Date.now()%>"
+    />
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%=htmlWebpackPlugin.files.css[css] %>" rel="stylesheet" />
+    <% } %>
+    <link
+      rel="stylesheet"
+      href="//comm.admin.tv108.cn:1505/pace/1.0.2/themes/blue/pace-theme-minimal.css"
+    />
+    <script
+      type="text/javascript"
+      src="//comm.admin.tv108.cn:1505/pace/1.0.2/pace.js"
+    ></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="//comm.admin.tv108.cn:1505/vue/3.2.37/vue.global.js"></script>
+    <script src="//comm.admin.tv108.cn:1505/vuex/4.0.2/vuex.global.prod.js"></script>
+    <script src="//comm.admin.tv108.cn:1505/vue-router/4.0.16/vue-router.global.prod.js"></script>
+    <script src="//comm.admin.tv108.cn:1505/axios/0.27.2/axios.min.js"></script>
+    <script src="//comm.admin.tv108.cn:1505/element-plus/2.2.15/index.full.min.js"></script>
+    <script src="//comm.admin.tv108.cn:1505/icons-vue/2.0.6/index.iife.min.js"></script>
+    <!-- start 不要修改 -->
+    <!-- built files will be auto injected 不要修改 -->
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script
+      type="text/javascript"
+      src="<%=htmlWebpackPlugin.files.chunks[chunk].entry %>"
+    ></script>
+    <% } %>
+    <!-- end 不要修改 -->
+  </body>
+</html>
